@@ -1,0 +1,15 @@
+[About]
+Just a really really really basic C++ engine framework.
+Still a whole lot more that needs to be written.
+
+So far all it does is blit an image to the screen.
+Yep.
+Thats it.
+
+[Dependancies]
+
+Depends on SDL and SDL_image.
+Future builds will probably need SDL_ttf, SDL_mixer and SDL_gfx at the least.
+Possibly even Cairo.
+
+~Cazum
