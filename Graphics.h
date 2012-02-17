@@ -8,7 +8,6 @@ class Graphics
 private:
 	    int spriteindex;
         SDL_Surface* sprites[128];
-        SDL_Surface* derp;
         SDL_Surface* buffer;
 
 public:
@@ -16,7 +15,7 @@ public:
 	Graphics();
 	~Graphics();
 	void drawImage(int index, int x, int y);
-	bool loadImage(char* filename);
+	void loadImage(char* filename);
 	SDL_Surface* getBuffer();
 };
 

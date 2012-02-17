@@ -12,18 +12,13 @@
     int amask = 0xff000000;
 #endif
 
-	/*int spriteindex;
-	SDL_Surface* sprites[128];
-	SDL_Surface* derp;
-	SDL_Surface* buffer;
-	*/
-
 	Graphics::Graphics()
 	{
-		printf("initialize");
+		printf("initializing....\n");
 		SDL_Init(SDL_INIT_VIDEO);
 		buffer = SDL_CreateRGBSurface(SDL_HWSURFACE , 500, 500, 32, rmask, gmask, bmask, amask);
 		spriteindex = -1;
+		printf("initialized!\n\n");
 	}
 	Graphics::~Graphics()
 	{
@@ -34,23 +29,28 @@
 		SDL_Rect tempRect;
 		tempRect.x = x;
 		tempRect.y = y;
-		tempRect.h = derp->h;
-		tempRect.h = derp->w;
-		SDL_BlitSurface(derp, &tempRect, buffer,NULL);
+		tempRect.h = sprites[index]->h;
+		tempRect.h = sprites[index]->w;
+		SDL_BlitSurface(sprites[index], &tempRect, buffer,NULL);
 	}
 	
-	bool Graphics::loadImage(char* filename)
+	void Graphics::loadImage(char* filename)
 	{
+		if(spriteindex<=127){
+			spriteindex++;
+			sprites[spriteindex] = IMG_Load("pic.png");
 		
-		spriteindex++;
-		derp = IMG_Load("pic.png");
-		
-		if(derp==NULL)
-		{
-			return 1; //error
+			if(sprites[spriteindex]==NULL)
+			{
+				printf("error loading image\n");
 			
+			}
+			printf("image %i loaded successfully from %s \n",spriteindex, filename);
 		}
-		return 0;
+		else
+		{
+			printf("error allocating image to array\n");
+		}
 	}
 	
 	SDL_Surface* Graphics::getBuffer()
