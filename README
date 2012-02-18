@@ -14,6 +14,7 @@ Possibly even Cairo.
 
 [TODO]
 Impliment a generic Json Parser and make a few functions around that for loading resource and map files and info.
+http://joysofprogramming.com/json-c-libjson-tutorial/
 Tile engine
 View engine
 
