@@ -12,4 +12,9 @@ Depends on SDL and SDL_image.
 Future builds will probably need SDL_ttf, SDL_mixer and SDL_gfx at the least.
 Possibly even Cairo.
 
+[TODO]
+Impliment a generic Json Parser and make a few functions around that for loading resource and map files and info.
+Tile engine
+View engine
+
 ~Cazum
